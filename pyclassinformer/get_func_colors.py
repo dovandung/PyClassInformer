@@ -8,7 +8,8 @@ ida_idaapi.require("pyclassinformer.qtutils")
 
 def get_chooser_data(chooser="Functions"):
     cri = ida_kernwin.chooser_row_info_vec_t()
-    ida_kernwin.get_chooser_rows(cri, chooser, ida_kernwin.GCRF_ALL)
+    #This line make IDA 9.3 Crash
+    #ida_kernwin.get_chooser_rows(cri, chooser, ida_kernwin.GCRF_ALL)
     return cri
 
 def get_func_color(cri, f):
@@ -71,3 +72,4 @@ def get_gen_lib_func_colors():
     return gen_func_color, lib_func_color
 
 #print([hex(x) for x in get_gen_lib_func_colors()])
+
